@@ -14,7 +14,7 @@ terminal is a commander for execute cmd on server side. It has a light client te
 
 `make build` make the binary file for your pc.
 
-running the server `./bin/darwin/amd64/server`
+ `./bin/darwin/amd64/server` running the server:
 
 ``` bash
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
@@ -29,7 +29,7 @@ running the server `./bin/darwin/amd64/server`
 
 
 
-running the client ```./bin/darwin/amd64/cli```
+```./bin/darwin/amd64/cli``` running the client:
 
 ```bash
 client terminal
