@@ -7,24 +7,24 @@ import (
 func NewRootCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "cli",
-		Short: "客户端",
-		Long:  `客户端`,
+		Short: "client terminal",
+		Long:  `client terminal`,
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.Help()
 			return
 		},
 	}
 	// 设置命令参数
-	cmd.PersistentFlags().BoolP("verbose", "v", false, "打印请求参数")
+	cmd.PersistentFlags().BoolP("verbose", "v", false, "show more info")
 
 	// 添加子命令
 	childCommands := []*cobra.Command{
-		NewEnvCmd(),  // env
 		NewTestCmd(), // test
+		NewEnvCmd(),  // env
 	}
 	cmd.AddCommand(childCommands...)
 
-	SetHelpCmd(cmd)
+	// SetHelpCmd(cmd)
 	return cmd
 }
 
@@ -32,8 +32,9 @@ func NewRootCmd() *cobra.Command {
 func NewEnvCmd() *cobra.Command {
 	return &cobra.Command{
 		Use:   "env",
-		Short: "环境配置",
-		Long:  `环境配置`,
+		Short: "manage env config",
+		Long:  `manage env config`,
+		Run:   func(c *cobra.Command, args []string) {},
 	}
 }
 
@@ -41,7 +42,7 @@ func NewEnvCmd() *cobra.Command {
 func SetHelpCmd(c *cobra.Command) {
 	var helpCommand = &cobra.Command{
 		Use:   "help [command]",
-		Short: "查看帮助",
+		Short: "show help info",
 		Long: `Help provides help for any command in the application.
 Simply type ` + c.Name() + ` help [path to command] for full details.`,
 

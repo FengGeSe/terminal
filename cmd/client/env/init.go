@@ -16,8 +16,8 @@ type InitConfigOpts struct {
 func NewInitCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "init",
-		Short: "初始化环境配置",
-		Long:  `初始化环境配置`,
+		Short: "init config",
+		Long:  `init config`,
 		Run:   initRun,
 	}
 

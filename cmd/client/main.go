@@ -84,11 +84,11 @@ func IsUnknownCommand(err error) bool {
 func NewRootCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "cli",
-		Short: "客户端",
-		Long:  `客户端`,
+		Short: "client terminal",
+		Long:  `client terminal`,
 	}
 	// 设置全局命令参数
-	cmd.PersistentFlags().BoolP("verbose", "v", false, "打印请求参数")
+	cmd.PersistentFlags().BoolP("verbose", "v", false, "show more info")
 
 	// 添加子命令
 	childCommands := []*cobra.Command{

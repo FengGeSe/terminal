@@ -9,8 +9,8 @@ import (
 func NewEnvCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "env",
-		Short: "环境配置",
-		Long:  `环境配置`,
+		Short: "manage env config",
+		Long:  `manage env config`,
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.Help()
 		},

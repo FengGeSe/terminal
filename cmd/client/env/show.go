@@ -11,8 +11,8 @@ import (
 func NewShowCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "show",
-		Short: "查看环境",
-		Long:  `查看环境`,
+		Short: "show config",
+		Long:  `show config`,
 		Run:   showRun,
 	}
 

@@ -16,8 +16,8 @@ type ConfigOpts struct {
 func NewAddCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "add [env]",
-		Short: "添加环境",
-		Long:  `添加环境`,
+		Short: "add a new env",
+		Long:  `add a new env`,
 		Run:   addRun,
 	}
 

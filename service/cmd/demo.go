@@ -17,8 +17,8 @@ type TestOpts struct {
 func NewTestCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "test",
-		Short: "测试用命令",
-		Long:  `测试用命令`,
+		Short: "hello world",
+		Long:  `hello world`,
 		Run:   testRun,
 	}
 

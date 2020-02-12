@@ -11,8 +11,8 @@ import (
 func NewSetCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "set [env]",
-		Short: "切换环境",
-		Long:  `切换环境`,
+		Short: "switch env",
+		Long:  `switch env`,
 		Run:   setRun,
 	}
 	return cmd

@@ -11,8 +11,8 @@ import (
 func NewDropCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "drop [env]",
-		Short: "移除环境",
-		Long:  `移除环境`,
+		Short: "drop a env from config",
+		Long:  `drop a env from config`,
 		Run:   dropRun,
 	}
 	return cmd
