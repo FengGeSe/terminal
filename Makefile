@@ -34,4 +34,6 @@ build-linux:
 
 ## clean: Clean build files.
 clean:
-	rm -f bin/*
+	rm -rf bin/darwin
+	rm -rf bin/linux
+	rm -rf bin/windows
