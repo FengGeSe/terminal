@@ -1,8 +1,15 @@
 # terminal
 
-terminal 是一个远程执行命令行程序的项目。包含客户端和服务端。
+terminal is a commander for execute cmd on server side. It has a light client terminal.
 
-<img src="./static/img/terminal.jpg" width=800 heigth=100>
+<img src="./static/img/terminal.jpg" width=800 height=500>
 
-### 功能
+### Features
+ - [x] execute client terminal cmd args on server.
+ - [x] client can set env config and send them to server when execute a remote cmd. 
+ - [ ] client can update self.
+ 
 
+### Usage
+
+`make `

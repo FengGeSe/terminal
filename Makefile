@@ -15,7 +15,7 @@ help: Makefile
 	@echo
 	@echo "Available Commands:"
 	@sed -n 's/^##//p' $< | column -t -s ':' |  sed -e 's/^/ /'
-	
+
 ## build: Compile the binary.
 build:
 	@go build -o bin/$(OS_ARCH)/cli cmd/client/main.go
