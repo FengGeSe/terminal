@@ -11,6 +11,7 @@ import (
 	"github.com/tidwall/gjson"
 
 	"github.com/FengGeSe/terminal/cmd/client/env"
+	"github.com/FengGeSe/terminal/cmd/client/update"
 	"github.com/FengGeSe/terminal/conf"
 	"github.com/FengGeSe/terminal/model"
 	"github.com/FengGeSe/terminal/util"
@@ -92,7 +93,8 @@ func NewRootCmd() *cobra.Command {
 
 	// 添加子命令
 	childCommands := []*cobra.Command{
-		env.NewEnvCmd(), // env
+		env.NewEnvCmd(),       // env
+		update.NewUpdateCmd(), // update
 	}
 	cmd.AddCommand(childCommands...)
 

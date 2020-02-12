@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"net/http"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -40,6 +41,7 @@ func main() {
 	{
 		v1.POST("/execute", executeEndpoint)
 	}
+	router.StaticFS("/file", http.Dir("public"))
 	router.Run(":8080") // listen and serve on 0.0.0.0:8080
 }
 

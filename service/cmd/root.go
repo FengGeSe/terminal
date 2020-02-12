@@ -19,8 +19,9 @@ func NewRootCmd() *cobra.Command {
 
 	// 添加子命令
 	childCommands := []*cobra.Command{
-		NewTestCmd(), // test
-		NewEnvCmd(),  // env
+		NewTestCmd(),   // test
+		NewEnvCmd(),    // env
+		NewUpdateCmd(), // update
 	}
 	cmd.AddCommand(childCommands...)
 
@@ -35,6 +36,14 @@ func NewEnvCmd() *cobra.Command {
 		Short: "manage env config",
 		Long:  `manage env config`,
 		Run:   func(c *cobra.Command, args []string) {},
+	}
+}
+func NewUpdateCmd() *cobra.Command {
+	return &cobra.Command{
+		Use:   "update",
+		Short: "update client self",
+		Long:  `update client self`,
+		Run:   func(cmd *cobra.Command, args []string) {},
 	}
 }
 
