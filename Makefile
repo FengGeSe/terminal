@@ -32,6 +32,11 @@ build-linux:
 	@GOOS=linux GOARCH=amd64 go build -o bin/linux/amd64/cli cmd/client/main.go
 	@GOOS=linux GOARCH=amd64 go build -o bin/linux/amd64/server cmd/server/main.go
 
+## build-mac: Compile the linux binary.
+build-mac:
+	@GOOS=darwin GOARCH=amd64 go build -o bin/darwin/amd64/cli cmd/client/main.go
+	@GOOS=darwin GOARCH=amd64 go build -o bin/darwin/amd64/server cmd/server/main.go
+
 ## clean: Clean build files.
 clean:
 	rm -rf bin/darwin
