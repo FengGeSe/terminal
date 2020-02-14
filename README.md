@@ -1,4 +1,4 @@
-# terminal
+# Terminal
 
 terminal is a commander for execute cmd on server side. It has a light client terminal.
 
