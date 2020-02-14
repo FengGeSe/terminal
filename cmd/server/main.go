@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"net/http"
 	"time"
@@ -36,13 +37,24 @@ func init() {
 }
 
 func main() {
+
+	var (
+		host string
+		port int
+	)
+	flag.StringVar(&host, "host", "0.0.0.0", "The ip on which to serve")
+	flag.IntVar(&port, "port", 8080, "The port on which to serve")
+	flag.Parse()
+
 	// Simple group: v1
 	v1 := router.Group("/v1")
 	{
 		v1.POST("/execute", executeEndpoint)
 	}
 	router.StaticFS("/file", http.Dir("public"))
-	router.Run(":8080") // listen and serve on 0.0.0.0:8080
+
+	fmt.Printf("Listening and serving HTTP on %s:%d\n", host, port)
+	router.Run(fmt.Sprintf("%s:%d", host, port)) // listen and serve on 0.0.0.0:8080
 }
 
 func executeEndpoint(c *gin.Context) {

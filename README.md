@@ -8,6 +8,7 @@ terminal is a commander for execute cmd on server side. It has a light client te
  - [x] execute client terminal cmd args on server.
  - [x] client can set env config and send them to server when execute a remote cmd. 
  - [x] client can update self.
+ - [ ] TLS
 
 
 ### Usage
