@@ -20,6 +20,8 @@ help: Makefile
 build:
 	@go build -o bin/$(OS_ARCH)/cli cmd/client/main.go
 	@go build -o bin/$(OS_ARCH)/server cmd/server/main.go
+	@cp -r bin/ public
+
 
 ## install: build and install.
 install:

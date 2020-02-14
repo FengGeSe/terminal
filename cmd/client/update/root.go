@@ -8,6 +8,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"runtime"
 	"strings"
 
 	"github.com/FengGeSe/terminal/conf"
@@ -28,7 +29,8 @@ func NewUpdateCmd() *cobra.Command {
 				cmd.Print(util.WrapRed(err))
 				return
 			}
-			url := config.CurrentEnv().Server + "/file/cli"
+			url := fmt.Sprintf("%s/file/%s/%s/cli", config.CurrentEnv().Server, runtime.GOOS, runtime.GOARCH)
+
 			for _, p := range FindYourself() {
 				cmd.Println(p)
 				if err := SaveFile(url, p); err != nil {
@@ -45,6 +47,9 @@ func SaveFile(url, path string) error {
 	res, err := http.Get(url)
 	if err != nil {
 		return err
+	}
+	if res.StatusCode != 200 {
+		return fmt.Errorf("%s", res.Status)
 	}
 	f, err := os.OpenFile(path, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0731)
 	if err != nil {
